@@ -49,7 +49,7 @@ function Callback (res){
 	$item.on('click', video_view);
 	if ($(window).width() > 768)
 	{
-		$('li:first-child').off('click');
+		$('article:first-child').off('click');
 	}
 	$right.css({display:'block'});
 	$query.val('');
