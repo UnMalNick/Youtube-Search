@@ -57,6 +57,10 @@ function Callback (res){
 }
 
 function Submit(){
+	if ($query.val() == '')
+	{
+		$query.attr('value','Mejorando la');
+	}
 	$.ajax({
 		data : {
 			alt: 'json',
