@@ -49,11 +49,45 @@ header #logo img
 	width: 80px;
 }
 
+#right
+{
+	display: inline-block;
+	display: none;
+	margin-right: 2%;
+	position: absolute;
+	right: 0;
+	vertical-align: top;
+	width: 25%;
+}
+#right h2
+{
+	color: #434343;
+}
+#right #link
+{
+	background: #22BCE0;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+	color: white;
+	display: block;
+	font-size: 1.2em;
+	padding: 0.5em 0;
+	text-align: center;
+	text-decoration: none;
+}
 #result_youtube 
 {
-	margin: 0 8px 0 -29px;
+	display: inline-block;
+	margin: 0 1%;
 	transition: all 0.2s ease;
+	vertical-align: top;
+	width: 98%;
 }
+#right #welcome
+{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+}
+
 #search 
 {
 	background: #878787;
@@ -85,6 +119,7 @@ header #logo img
 	padding: 5px 23px;
 	width: 75%;
 }
+
 #wrapper 
 {
 	margin: auto;
@@ -178,16 +213,16 @@ header #logo img
 
 @media screen and (min-width: 768px)
 {
-	li:nth-child(2)
+	article:nth-child(2)
 	{
 		width: 70%;
 	}
-	li:first-child 
+	article:first-child 
 	{
-		width: 70%;
+		width: 68%;
 		height: 350px;
 	}
-	li:first-child .image_item
+	article:first-child .image_item
 	{
 		display: block;
 		position: absolute;
@@ -195,7 +230,7 @@ header #logo img
 		bottom: 0;
 		height: 79px;
 	}
-	li:first-child .desktop
+	article:first-child .desktop
 	{
 		position: absolute;
 		z-index: 2;
@@ -205,28 +240,28 @@ header #logo img
 		bottom: 0px;
 		opacity: 0.9;
 	}
-	li:first-child .embed_item
+	article:first-child .embed_item
 	{
 		margin: 0px;
 	}
-	li:first-child .embed_item iframe
+	article:first-child .embed_item iframe
 	{
 		height: 350px;
 	}
-	li:first-child .image_item img {
+	article:first-child .image_item img {
 		border-radius: 0px 0 0 0;
 		height: 79px;
 		opacity: 0.8;
 	}
-	li:first-child .title_item 
+	article:first-child .title_item 
 	{
 		margin: 6px 0px 6px 116px;
 	}
-	li:first-child p
+	article:first-child p
 	{
 		margin: 6px 0px 6px 116px;
 	}
-	li:first-child .data_item
+	article:first-child .data_item
 	{
 		display: none;
 	}
@@ -242,6 +277,13 @@ header #logo img
 	}
 }
 
+@media screen and (max-width: 767px)
+{
+	#right
+	{
+		display: none !important;
+	}
+}
 
 @media screen and (max-width: 480px)
 {

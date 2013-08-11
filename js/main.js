@@ -3,6 +3,9 @@ var $youtube = $('#youtube'),
 	$query = $('#search_query'),
 	$search = $('#search_button'),
 	$result = $('#result_youtube'),
+	$right = $('#right'),
+	$link = $('#welcome #link'),
+	$text = $('#welcome #text'),
 	$item;
 
 function video_Noview () {
@@ -23,12 +26,15 @@ function VideoTemplate(video){
 		thumb = video.media$group.media$thumbnail[1].url,
 		embed = video.media$group.media$content[0].url.split('?')[0].replace('/v/','/embed/');
 
-	html = '<li class="item">';
+	html = '<article class="item">';
 	html += '<figure class="image_item"> <img src="' + thumb + '"" /> </figure>';
 	html += '<div class="desktop"><h2 class="title_item"><a href="#">' + title + '</a></h2>';
 	html += '<p class="author_item"> Por <a href="#">' + author + '</a></p>';
 	html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="published_item">' + published + '</span></p></div>';
-	html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></li>';
+	html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></article>';
+
+	$text.html($query.val() + ', Do you want to do the search on YouTube?');
+	$link.attr('href','http://www.youtube.com/results?search_query=' + $query.val());
 
 	return html;
 }
@@ -46,6 +52,8 @@ function Callback (res){
 	{
 		$('li:first-child').off('click');
 	}
+	$right.css({display:'block'});
+	$query.val('');
 }
 
 function Submit(){
