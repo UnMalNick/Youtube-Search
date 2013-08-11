@@ -22,7 +22,6 @@ function VideoTemplate(video){
 		category = video.category[1].label,
 		thumb = video.media$group.media$thumbnail[1].url,
 		embed = video.media$group.media$content[0].url.split('?')[0];
-	console.log(embed);
 
 	html = '<li class="item">';
 	html += '<figure class="image_item"> <img src="' + thumb + '"" /> </figure>';
