@@ -60,6 +60,7 @@ header #logo img
 	margin-top: 45px;
 	padding: 10px 0px;
 	text-align: center;
+	border-radius: 5px;
 }
 #activity a
 {
@@ -108,6 +109,7 @@ header #logo img
 	-moz-transition: background 0.2s ease;
 	-ms-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
+	border-radius: 5px;
 }
 #right #link:hover
 {
@@ -277,16 +279,16 @@ header #logo img
 
 @media screen and (min-width: 768px)
 {
-	article:nth-child(2)
+	#result_youtube article:nth-child(2)
 	{
 		width: 70%;
 	}
-	article:first-child 
+	#result_youtube article:first-child 
 	{
 		width: 68%;
 		height: 350px;
 	}
-	article:first-child .image_item
+	#result_youtube article:first-child .image_item
 	{
 		display: block;
 		position: absolute;
@@ -294,7 +296,7 @@ header #logo img
 		bottom: 0;
 		height: 79px;
 	}
-	article:first-child .desktop
+	#result_youtube article:first-child .desktop
 	{
 		position: absolute;
 		z-index: 2;
@@ -304,28 +306,28 @@ header #logo img
 		bottom: 0px;
 		opacity: 0.9;
 	}
-	article:first-child .embed_item
+	#result_youtube article:first-child .embed_item
 	{
 		margin: 0px;
 	}
-	article:first-child .embed_item iframe
+	#result_youtube article:first-child .embed_item iframe
 	{
 		height: 350px;
 	}
-	article:first-child .image_item img {
+	#result_youtube article:first-child .image_item img {
 		border-radius: 0px 0 0 0;
 		height: 79px;
 		opacity: 0.8;
 	}
-	article:first-child .title_item 
+	#result_youtube article:first-child .title_item 
 	{
 		margin: 6px 0px 6px 116px;
 	}
-	article:first-child p
+	#result_youtube article:first-child p
 	{
 		margin: 6px 0px 6px 116px;
 	}
-	article:first-child .data_item
+	#result_youtube article:first-child .data_item
 	{
 		display: none;
 	}
@@ -339,9 +341,25 @@ header #logo img
 	#wrapper {
 		width: 100%;
 	}
+	#result_youtube article:nth-child(2)
+	{
+		width: 100%;
+	}
+	#result_youtube article:first-child 
+	{
+		width: 100%;
+	}
+	.item:hover
+	{
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+	}
 }
 
-@media screen and (max-width: 767px)
+@media screen and (max-width: 820px)
 {
 	#right
 	{
