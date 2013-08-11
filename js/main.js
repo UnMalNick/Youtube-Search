@@ -33,9 +33,6 @@ function VideoTemplate(video){
 	html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="published_item">' + published + '</span></p></div>';
 	html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></article>';
 
-	$text.html($query.val() + ', Do you want to do the search on YouTube?');
-	$link.attr('href','http://www.youtube.com/results?search_query=' + $query.val());
-
 	return html;
 }
 
@@ -46,7 +43,9 @@ function Callback (res){
 		html += VideoTemplate(res[i]);
 	}
 	$result.html(html);
-	$item = $('.item')
+	$text.html($query.val() + ', Do you want to do the search on YouTube?');
+	$link.attr('href','http://www.youtube.com/results?search_query=' + $query.val() );
+	$item = $('.item');
 	$item.on('click', video_view);
 	if ($(window).width() > 768)
 	{
@@ -59,14 +58,14 @@ function Callback (res){
 function Submit(){
 	if ($query.val() == '')
 	{
-		$query.attr('value','Mejorando la');
+		$query.val('Mejorando la');
 	}
 	$.ajax({
 		data : {
 			alt: 'json',
 			lr: 'es',
 			q: $query.val(),
-			'max-results': 7
+			'max-results': 8
 		},
 		url: url
 	}).done( Callback );
@@ -78,6 +77,8 @@ function Submit(){
 $search.on('click', Submit);
 $query.keyup(function (key) {
 	if (key.keyCode == 13){
-		Submit()
+		Submit();
 	}
 });
+
+Submit();
