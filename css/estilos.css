@@ -96,7 +96,7 @@ header #logo img
 }
 #right #link
 {
-	background: #22BCE0;
+	background: #22BC9B;
 	box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
 	color: white;
 	display: block;
@@ -113,7 +113,12 @@ header #logo img
 }
 #right #link:hover
 {
-	background: #22BC9B;
+	background: #22BCE0;
+}
+#right #welcome
+{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
 }
 #result_youtube 
 {
@@ -126,11 +131,6 @@ header #logo img
 	-o-transition: all 0.2s ease;
 	vertical-align: top;
 	width: 98%;
-}
-#right #welcome
-{
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
 }
 
 #search 
