@@ -44,7 +44,7 @@ function callback(res) {
         html += videoTemplate(res[i]);
     }
     $result.html(html);
-    $text.html($query.val() + ', Do you want to do the search on YouTube?');
+    $text.html('<b>'$query.val() + '</b><p>Do you want to do the search on YouTube?</p>');
     $link.attr('href','http://www.youtube.com/results?search_query=' + $query.val() );
     $('.item').on('click', showVideoView);
     if ($(window).width() > 768) {
