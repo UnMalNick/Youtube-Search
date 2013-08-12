@@ -57,15 +57,17 @@ function callback(res) {
     });
 }
 
-function submit() {
+function submit(search) {
+    var busqueda = search || 'Mejorando la';
+    /*
     if ($query.val() == '') {
         $query.val('Mejorando la');
-    }
+    }*/
     $.ajax({
         data : {
             alt: 'json',
             lr: 'es',
-            q: $query.val(),
+            q: busqueda,
             'max-results': 8
         },
         url: url
@@ -78,8 +80,14 @@ function submit() {
 $search.on('click', submit);
 $query.keyup(function (key) {
     if (key.keyCode == 13) {
-        submit();
+        submit($query.val());
     }
 });
 
-submit();
+// Habilitar busqueda de lista "You can also search about:"
+$('#activity a').on('click', function(){
+    var searchTerm = $('this').text();
+    submit(searchTerm);
+});
+
+submit($query.val());
