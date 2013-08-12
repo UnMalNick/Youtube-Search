@@ -77,7 +77,7 @@ function submit(search) {
 }
 
 
-$search.on('click', submit);
+$search.on('click', submit($query.val());
 $query.keyup(function (key) {
     if (key.keyCode == 13) {
         submit($query.val());
