@@ -52,6 +52,9 @@ function callback(res) {
     }
     $right.css({ display:'block' });
     $query.val('');
+    $('a').on('click', function(){
+        event.preventDefault();
+    });
 }
 
 function submit() {
