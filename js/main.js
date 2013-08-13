@@ -6,7 +6,8 @@ var url = 'http://gdata.youtube.com/feeds/api/videos',
     $right = $('#right'),
     $link = $('#link'),
     $text = $('#text'),
-    $item;
+    $item,
+    textSearch;
 
 function hideVideoView() {
     $(this).css({ height: '128px' });
@@ -44,30 +45,27 @@ function callback(res) {
         html += videoTemplate(res[i]);
     }
     $result.html(html);
-    $text.html($query.val() + 'Do you want to do the search on YouTube?');
-    $link.attr('href','http://www.youtube.com/results?search_query=' + $query.val() );
+    $text.html( textSearch + ', Do you want to do the search on YouTube?');
+    $link.attr('href','http://www.youtube.com/results?search_query=' + textSearch );
     $('.item').on('click', showVideoView);
     if ($(window).width() > 768) {
         $('article:first-child').off('click');
     }
     $right.css({ display:'block' });
-    $query.val('');
     $('a').on('click', function(){
         event.preventDefault();
     });
+    $query.val('');
 }
 
-function submit(search) {
-    var busqueda = search || 'Mejorando la';
-    /*
-    if ($query.val() == '') {
-        $query.val('Mejorando la');
-    }*/
+function submit() {
+    $query.val($query.val() || 'Mejorando la');
+    textSearch = $query.val();
     $.ajax({
         data : {
             alt: 'json',
             lr: 'es',
-            q: busqueda,
+            q: $query.val(),
             'max-results': 8
         },
         url: url
@@ -77,17 +75,18 @@ function submit(search) {
 }
 
 
-$search.on('click', submit($query.val());
+$search.on( 'click', submit() );
+
 $query.keyup(function (key) {
     if (key.keyCode == 13) {
-        submit($query.val());
+        submit();
     }
 });
 
-// Habilitar busqueda de lista "You can also search about:"
+
 $('#activity a').on('click', function(){
-    var searchTerm = $('this').text();
-    submit(searchTerm);
+    $query.val($(this).text());
+    submit();
 });
 
-submit($query.val());
+submit();
