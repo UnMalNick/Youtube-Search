@@ -288,6 +288,13 @@ header #logo img
 		width: 68%;
 		height: 350px;
 	}
+	#result_youtube article:first-child:hover {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
 	#result_youtube article:first-child .image_item
 	{
 		display: block;
@@ -331,8 +338,13 @@ header #logo img
 	{
 		display: none;
 	}
-
-
+	.active:hover {
+		-webkit-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-o-transform: none !important;
+		transform: none !important;
+	}
 }
 
 
