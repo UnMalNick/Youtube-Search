@@ -32,7 +32,7 @@ function videoTemplate(video) {
     html += '<article class="item">';
     html += '<figure class="image_item"> <img src="' + thumb + '"" /> </figure>';
     html += '<div class="desktop"><h2 class="title_item"><a href="#">' + title + '</a></h2>';
-    html += '<p class="author_item"> Por <a href="#">' + author + '</a></p>';    html += '';
+    html += '<p class="author_item"> Por <a href="#">' + author + '</a></p>';
     html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="views">Views: ' + views + '</span>&nbsp;<span class="published_item">' + published + '</span></p></div>';
     html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></article>';
 

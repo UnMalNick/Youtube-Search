@@ -1,3 +1,47 @@
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		-webkit-transform: rotateY(0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.5);
+		-webkit-transform: rotateY(360deg);
+	}
+}
+@-moz-keyframes pulse {
+	0% {
+		-moz-box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		-moz-transform: rotateY(0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.8);
+		-moz-transform: rotateY(360deg);
+	}
+}
+@-o-keyframes pulse {
+	0% {
+		box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		-o-transform: rotateY(0);
+	}
+	100% {
+		box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.8);
+		-o-transform: rotateY(360deg);
+	}
+}
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		transform: rotateY(0);
+	}
+	100% {
+		box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.8);
+		transform: rotateY(360deg);
+	}
+}
 a
 {
 	color: #DD4F24;
@@ -46,9 +90,15 @@ header h1
 }
 header #logo img
 {
+	border-radius: 40px;
 	width: 80px;
 }
-
+header #logo img:hover,header #logo img.hover_effect  {
+	-webkit-animation: pulse 1s infinite alternate ease-in-out;
+	-moz-animation: pulse 1s infinite alternate ease-in-out;
+	-o-animation: pulse 1s infinite alternate ease-in-out;
+	animation: pulse 1s infinite alternate ease-in-out;
+}
 #activity h3
 {
 	background: #DE5759;
@@ -285,7 +335,7 @@ header #logo img
 	}
 	#result_youtube article:first-child 
 	{
-		width: 68%;
+		width: 70%;
 		height: 350px;
 	}
 	#result_youtube article:first-child:hover {
