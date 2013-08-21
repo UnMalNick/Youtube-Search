@@ -255,6 +255,10 @@ header #logo img:hover,header #logo img.hover_effect  {
 	margin-right: 14px;
 	margin-top: -30px;
 }
+.item:hover
+{
+	border-bottom: 3px #DE5759 solid;
+}
 .item p
 {
 	color: #7A7A7A;
@@ -336,13 +340,6 @@ header #logo img:hover,header #logo img.hover_effect  {
 	{
 		width: 70%;
 		height: 350px;
-	}
-	#result_youtube article:first-child:hover {
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
 	}
 	#result_youtube article:first-child .image_item
 	{
@@ -432,13 +429,17 @@ header #logo img:hover,header #logo img.hover_effect  {
 	{
 		width: 100%;
 	}
-	.item:hover
-	{
-		transform: scale(1);
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
+	#result_youtube article:first-child:hover .desktop, 
+	#result_youtube article:first-child:hover .image_item {
+		height: 0px;
+	}
+	#result_youtube article:first-child .desktop, 
+	#result_youtube article:first-child .image_item {
+		transition: height 0.18s ease;
+		-o-transition: height 0.18s ease;
+		-ms-transition: height 0.18s ease;
+		-webkit-transition: height 0.18s ease;
+		-moz-transition: height 0.18s ease;
 	}
 }
 
