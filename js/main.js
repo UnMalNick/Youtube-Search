@@ -33,7 +33,7 @@ function videoTemplate(video) {
     html += '<figure class="image_item"> <img src="' + thumb + '"" /> </figure>';
     html += '<div class="desktop"><h2 class="title_item"><a href="#">' + title + '</a></h2>';
     html += '<p class="author_item"> Por <a href="#">' + author + '</a></p>';
-    html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="views">Views: ' + views + '</span>&nbsp;<span class="published_item">' + published + '</span></p></div>';
+    html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="views"><strong>Views: </strong>' + views + '</span>&nbsp;<span class="published_item">' + published + '</span></p></div>';
     html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></article>';
 
     return html;
@@ -45,17 +45,25 @@ function callback(res) {
     for (var i=0; i<res.length; i++) {
         html += videoTemplate(res[i]);
     }
+
     $result.html(html);
+    
     $text.html( textSearch + ', Do you want to do the search on YouTube?');
+    
     $link.attr('href','http://www.youtube.com/results?search_query=' + textSearch );
+    
     $('.item').on('click', showVideoView);
+    
     if ($(window).width() > 768) {
         $('article:first-child').off('click');
     }
+
     $right.css({ display:'block' });
+    
     $('a').on('click', function(){
         event.preventDefault();
     });
+    
     $query.val('');
 }
 
@@ -73,7 +81,7 @@ function submit() {
     }).done( callback );
 
     $result.html('<img class="loading_image" src="img/loading.gif" /><p class="loading_text">Loading ...</p>');
-    $right.css({ display:'block' });
+    $right.css({ display:'none' });
 }
 
 
