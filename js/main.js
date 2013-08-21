@@ -73,6 +73,7 @@ function submit() {
     }).done( callback );
 
     $result.html('<img class="loading_image" src="img/loading.gif" /><p class="loading_text">Loading ...</p>');
+    $right.css({ display:'block' });
 }
 
 
