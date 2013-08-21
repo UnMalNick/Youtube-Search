@@ -402,14 +402,6 @@ header #logo img:hover,header #logo img.hover_effect  {
 		display: none;
 	}
 
-
-	.active:hover {
-		-webkit-transform: none !important;
-		-moz-transform: none !important;
-		-ms-transform: none !important;
-		-o-transform: none !important;
-		transform: none !important;
-	}
 }
 
 
