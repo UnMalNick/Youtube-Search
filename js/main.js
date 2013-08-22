@@ -35,7 +35,8 @@ function videoTemplate(video) {
         author : author,
         category : category,
         published : published,
-        embed : embed
+        embed : embed,
+        views : views
     });
 
     return html;
