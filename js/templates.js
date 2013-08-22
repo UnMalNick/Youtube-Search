@@ -8,6 +8,7 @@ Templates.video = [
             '<p class="author_item"> Por <a href="#">{{ author }}</a></p>',
             '<p class="data_item">',
                 '<a class="tag_item" href="#">{{ category }}</a>',
+                '<span class="views"><strong>Views: </strong>{{ views }}</span>&nbsp;',
                 '<span class="published_item">{{ published }}</span>',
             '</p>',
         '</div>',

@@ -11,12 +11,12 @@ var url = 'http://gdata.youtube.com/feeds/api/videos',
 
 function hideVideoView() {
     $(this).css({ height: '128px' });
-    $(this).on('click', showVideoView);
+    $(this).on('click', showVideoView).removeClass('active');
 }
 
 function showVideoView() {
     $(this).css({ height: '477px' });
-    $(this).on('click', hideVideoView);
+    $(this).on('click', hideVideoView).addClass('active');
 }
 
 function videoTemplate(video) {
@@ -26,6 +26,7 @@ function videoTemplate(video) {
         category = video.category[1].label,
         thumb = video.media$group.media$thumbnail[1].url,
         embed = video.media$group.media$content[0].url.split('?')[0].replace('/v/','/embed/'),
+        views = video.yt$statistics["viewCount"],
         html = "";
 
     html = Mustache.render(Templates.video, {
@@ -46,17 +47,25 @@ function callback(res) {
     for (var i=0; i<res.length; i++) {
         html += videoTemplate(res[i]);
     }
+
     $result.html(html);
+    
     $text.html( textSearch + ', Do you want to do the search on YouTube?');
+    
     $link.attr('href','http://www.youtube.com/results?search_query=' + textSearch );
+    
     $('.item').on('click', showVideoView);
+    
     if ($(window).width() > 768) {
         $('article:first-child').off('click');
     }
+
     $right.css({ display:'block' });
+    
     $('a').on('click', function(){
         event.preventDefault();
     });
+    
     $query.val('');
 }
 
@@ -74,6 +83,7 @@ function submit() {
     }).done( callback );
 
     $result.html('<img class="loading_image" src="img/loading.gif" /><p class="loading_text">Loading ...</p>');
+    $right.css({ display:'none' });
 }
 
 
