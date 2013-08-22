@@ -10,12 +10,10 @@ var url = 'http://gdata.youtube.com/feeds/api/videos',
     textSearch;
 
 function hideVideoView() {
-    $(this).css({ height: '128px' });
     $(this).on('click', showVideoView).removeClass('active');
 }
 
 function showVideoView() {
-    $(this).css({ height: '477px' });
     $(this).on('click', hideVideoView).addClass('active');
 }
 
