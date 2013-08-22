@@ -28,12 +28,14 @@ function videoTemplate(video) {
         embed = video.media$group.media$content[0].url.split('?')[0].replace('/v/','/embed/'),
         html = "";
 
-    html += '<article class="item">';
-    html += '<figure class="image_item"> <img src="' + thumb + '"" /> </figure>';
-    html += '<div class="desktop"><h2 class="title_item"><a href="#">' + title + '</a></h2>';
-    html += '<p class="author_item"> Por <a href="#">' + author + '</a></p>';
-    html += '<p class="data_item"><a class="tag_item" href="#">' + category + '</a><span class="published_item">' + published + '</span></p></div>';
-    html += '<div class="embed_item"><iframe src="' + embed + '" frameborder="0" allowfullscreen></iframe></div></article>';
+    html = Mustache.render(Templates.video, {
+        thumb : thumb,
+        title : title,
+        author : author,
+        category : category,
+        published : published,
+        embed : embed
+    });
 
     return html;
 }
