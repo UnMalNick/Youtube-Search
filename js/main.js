@@ -76,8 +76,7 @@ function submit() {
             alt: 'json',
             lr: 'es',
             q: $query.val(),
-            'max-results': 8,
-            orderby: "viewCount"
+            'max-results': 8
         },
         url: url
     }).done( callback );
