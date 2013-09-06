@@ -379,6 +379,7 @@ header #logo img:hover,header #logo img.hover_effect  {
 	#result_youtube article:first-child .embed_item
 	{
 		margin: 0px;
+		display: block !important;
 	}
 	#result_youtube article:first-child:hover .desktop, 
 	#result_youtube article:first-child:hover .image_item {
