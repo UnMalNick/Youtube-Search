@@ -77,7 +77,7 @@ function submit() {
             lr: 'es',
             q: $query.val(),
             'max-results': 8,
-            orderby: viewCount
+            orderby: "viewCount"
         },
         url: url
     }).done( callback );
