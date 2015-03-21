@@ -69,7 +69,7 @@ function callback(res) {
 }
 
 function submit() {
-    $query.val($query.val() || 'Mejorando la');
+    $query.val($query.val() || 'Platzi');
     textSearch = $query.val();
     $.ajax({
         data : {
