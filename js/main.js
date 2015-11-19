@@ -81,6 +81,25 @@ function callback(res) {
 
 function submit() {
     ga('send', 'event', 'Busqueda', 'Submit', 'Caja de busqueda de la parte superior');
+    //Compra ficticia de mi empresa
+    ga('ecommerce:addTransaction',{
+        'id': '1234',                     // Transaction ID. Required.
+        'affiliation': 'Acme Clothing',   // Affiliation or store name.
+        'revenue': '11.99',               // Grand Total.
+        'shipping': '5',                  // Shipping.
+        'tax': '1.29'     
+    })
+    ga('ecommerce:addItem', {
+        'id': '1234',                     // Transaction ID. Required.
+        'name': 'Cursos de Platzo',    // Product name. Required.
+        'sku': 'DD23444',                 // SKU/code.
+        'category': 'Cursos',         // Category or variation.
+        'price': '76.900',                 // Unit price.
+        'quantity': '1',                   // Quantity.
+        'currency': 'COP'
+    });
+    ga('ecommerce:send');
+    //Termina Compra ficticia de mi empresa
     $query.val($query.val() || 'Platzi');
     textSearch = $query.val();
     $.ajax({
