@@ -1,4 +1,4 @@
-var url = 'http://gdata.youtube.com/feeds/api/videos',
+var url = 'https://www.googleapis.com/youtube/v3/search',
     $youtube = $('#youtube'),
     $query = $('#search_query'),
     $search = $('#search_button'),
@@ -18,13 +18,13 @@ function showVideoView() {
 }
 
 function videoTemplate(video) {
-    var title = video.title.$t,
-        published = video.published.$t.split('T')[0].replace('-','/').replace('-','/'),
-        author = video.author[0].name.$t,
-        category = video.category[1].label,
-        thumb = video.media$group.media$thumbnail[1].url,
-        embed = video.media$group.media$content[0].url.split('?')[0].replace('/v/','/embed/'),
-        views = video.yt$statistics["viewCount"],
+    var title = video.snippet.title,
+        published = video.snippet.publishedAt.split('T')[0].replace('-','/').replace('-','/'),
+        author = video.snippet.channelTitle,
+        category = "Tech",
+        thumb = video.snippet.thumbnails.high.url,
+        embed = "https://www.youtube.com/embed/" + video.id.videoId,
+        views = "10K",
         html = "";
 
     html = Mustache.render(Templates.video, {
@@ -41,9 +41,9 @@ function videoTemplate(video) {
 }
 
 function callback(res) {
-    res = res.feed.entry;
+    res = res.items;
     var html = '';
-    for (var i=0; i<res.length; i++) {
+    for (var i=1; i<res.length; i++) {
         html += videoTemplate(res[i]);
     }
 
@@ -73,10 +73,10 @@ function submit() {
     textSearch = $query.val();
     $.ajax({
         data : {
-            alt: 'json',
-            lr: 'es',
             q: $query.val(),
-            'max-results': 8
+            key: 'AIzaSyC9X_RJzeeCplmrB6mB6qgZuLy_MLoyjEA',
+            part: 'snippet',
+            maxResults: 25,
         },
         url: url
     }).done( callback );
