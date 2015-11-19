@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang='es'>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta charset="utf-8" />
     <title>Youtube Search!</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@mejorandola">
-	<meta name="twitter:title" content="Aprende Ruby on Rails desde cero.">
-	<meta name="twitter:description" content="Aprende ya mismo Ruby on Rails y crea aplicacione web en poco tiempo con el framework usado por Twitter y Basecamp.">
-	<meta name="twitter:creator" content="@mejorandola">
-	<meta name="twitter:image:src" content="https://mejorando.la/static/cursos/images/conceptos/ruby-on-rails-adrian-catalan.png">
-	<meta name="twitter:domain" content="http://mejorando.la/backend">
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	
-	  ga('create', 'UA-56391418-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-66936533-3', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body>
-	<section id="wrapper">
-		<header>
-			<figure id="logo">
-				<a href="#"><img src="img/logo.png" /></a>
-			</figure>
-			<h1>Youtube Search!</h1>
-		</header>
+    <section id="wrapper">
+        <header>
+            <figure id="logo">
+                <a href="#"><img src="img/logo.png" /></a>
+            </figure>
+            <h1>Youtube Search!</h1>
+        </header>
 
-		<section id="search">
-			<input id="search_query" placeholder="Search a video..."></input>
-			<button id="search_button">Search</button>
-		</section>
+        <section id="search">
+            <input id="search_query" placeholder="Search a video..."></input>
+            <button id="search_button">Search</button>
+        </section>
 
-		<aside id="right">
-			<section id="welcome">
-				<h2>Currently looking for:</h2>
-				<p id="text"></p>
-				<a id="link" href="#">Go to YouTube</a>
-			</section>
-			<section id="activity">
-				<h3>You can search about:</h3>
-				<a href="#">Platzi</a>
-				<a href="#">Christian Van Der Henst</a>
-				<a href="#">John Freddy Vega</a>
-				<a href="#">Urappan Mexican Song</a>
-			</section>
-		</aside>
+        <aside id="right">
+            <section id="welcome">
+                <h2>Currently looking for:</h2>
+                <p id="text"></p>
+                <a id="link" href="#">Go to YouTube</a>
+            </section>
+            <section id="activity">
+                <h3>You can search about:</h3>
+                <a href="#">Platzi</a>
+                <a href="#">Christian Van Der Henst</a>
+                <a href="#">John Freddy Vega</a>
+                <a href="#">Urappan Mexican Song</a>
+            </section>
+        </aside>
 
-	    <section id="result_youtube">
-	    </section>
+        <section id="result_youtube">
+        </section>
 
-	    <footer>
-			<p><strong>Powered by Platzi!</strong></p>
-			<p>Platzi 2013 ®</p>
-		</footer>
+        <footer>
+            <p><strong>Powered by Platzi!</strong></p>
+            <p>Platzi 2013 ®</p>
+        </footer>
 
-	    <script src='js/jquery.js'></script>
-	    <script src='js/mustache.min.js'></script>
-	    <script src='js/templates.js'></script>
-	    <script src='js/main.js'></script>
+        <script src='js/jquery.js'></script>
+        <script src='js/mustache.min.js'></script>
+        <script src='js/templates.js'></script>
+        <script src='js/main.js'></script>
     </section>
 </body>
 </html>
