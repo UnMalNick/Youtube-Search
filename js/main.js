@@ -69,6 +69,7 @@ function callback(res) {
 }
 
 function submit() {
+    ga('send', 'event', 'Busqueda', 'Submit', 'Caja de busqueda de la parte superior');
     $query.val($query.val() || 'Platzi');
     textSearch = $query.val();
     $.ajax({
