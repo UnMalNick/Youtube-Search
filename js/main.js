@@ -10,10 +10,12 @@ var url = 'https://www.googleapis.com/youtube/v3/search',
     textSearch;
 
 function hideVideoView() {
+    ga('send', 'event', 'Video', 'Click', 'Ocultar video');
     $(this).on('click', showVideoView).removeClass('active');
 }
 
 function showVideoView() {
+    ga('send', 'event', 'Video', 'Click', 'Mostrar video');
     $(this).on('click', hideVideoView).addClass('active');
 }
 
