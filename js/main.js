@@ -9,6 +9,15 @@ var url = 'https://www.googleapis.com/youtube/v3/search',
     $item,
     textSearch;
 
+function sendSocialEvent (e) {
+    e.preventDefault();
+    ga('send', 'social', 'YouTube', 'Click', 'http://unmalnick.github.io/')
+    window.location.href = 'http://youtube.com';
+    // body...
+}
+
+$link.on('click', sendSocialEvent);
+
 function hideVideoView() {
     ga('send', 'event', 'Video', 'Click', 'Ocultar video');
     $(this).on('click', showVideoView).removeClass('active');
